@@ -1,0 +1,786 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+:root {
+    --orange-color: #e28743;
+    /* Define a CSS variable for the background color */
+    --bg-color: #e0dede;
+    --black-color: #272523;
+    --autofill-background: #e1dfdf;
+    /* Define a font-family variable with fallbacks */
+    --font-family-poppins: 'Poppins', sans-serif;
+}
+
+/* Apply the CSS variable to the input field */
+form input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 30px 0 var(--autofill-background, #e1dfdf) inset !important;
+    -webkit-text-fill-color: #272525 !important;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+    font-family: var(--font-family-poppins, 'Poppins', sans-serif);
+}
+
+body {
+    background: var(--bg-color, #e0dede);
+    /* Fallback if var is not supported. */
+    color: var(--black-color, #272523);
+    margin: 2% 10%;
+    padding-top: 50px;
+    font-family: var(--font-family-poppins, 'Poppins', sans-serif);
+}
+
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 10%;
+    background: #e1dfdf;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo{
+    position: relative;
+    font-weight: 600;
+    color: #272525;
+    text-decoration: none;
+    font-size: 25px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: .3s;
+}
+/* TRANSITIONS & TRANSFORMS USED FOR HOVERING EFFECT */
+.logo::before{
+    position: absolute;
+    content: '';
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: #e1dfdf;
+    transition: .3s;
+    animation: showRight 1s ease forwards;
+    animation-delay: .4s
+}
+
+/* Hamburger menu styles */
+.side-menu {
+    display: none; /* Hide checkbox by default */
+}
+
+.hamb {
+    display: block;
+    cursor: pointer;
+    /* Add other styles for hamburger icon */
+}
+
+.hamb-line {
+    width: 30px;
+    height: 3px;
+    background-color: #333; /* Adjust color */
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+.navbar a {
+    font-size: 18px;
+    margin-left: 35px;
+    color: var(--black-color, #272523);
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 35px;
+    transition: .3s;
+}
+
+.navbar a:hover,
+.navbar a.active{
+    color: var(--orange-color, #e28743);;
+}
+
+.header i{
+    display: none;
+} 
+
+::selection {
+    background: var(--orange-color, #e28743);
+    color: var(--bg-color, #e0dede);
+}
+
+.home {
+    height: 110vh;
+    display: flex;
+    align-items: center;
+    /* padding: 0 10%; */
+    justify-content: center;
+    max-width: 100%;
+    margin: auto; /* Center the content */
+}
+
+.home-image {
+    /* display: block; */
+    max-width: 80%;
+    height: auto;
+    width: 70%;
+    padding-right: 10%;
+    padding-left: 5em;
+    /* margin-top: 20px; Adjust this margin as needed */
+}
+
+.home-content h1{
+    position: relative;
+    font-size: 3.5dvw;
+    /* 56px; */
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.home-content h1::before{
+    position: absolute;
+    content: '';
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: #e1dfdf;
+    transition: .3s;
+    animation: showRight 1s ease forwards;
+    animation-delay: 1s
+}
+
+.home-content h3{
+    position: relative;
+    font-size: 2dvw;
+    font-weight: 700;
+    color: var(--orange-color, #e28743);
+}
+
+.home-content h3::before{
+    position: absolute;
+    content: '';
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: #e1dfdf;
+    transition: .3s;
+    animation: showRight 1s ease forwards;
+    animation-delay: 1.3s
+}
+
+.home-content p{
+    position: relative;
+    font-size: 1em;
+    margin: 0.5em 0 2.5em; 
+}
+
+.home-content p::before{    
+    position: absolute;
+    content: '';
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: #e1dfdf;
+    transition: .3s;
+    animation: showRight 1s ease forwards;
+    animation-delay: 1.6s
+}
+
+.home-content .btn-box{
+    display: flex;
+    justify-content: space-between;
+    width: 345px;
+    height: 50px;
+    background: #e1dfdf;
+}
+
+.home-sci {
+    position: relative;
+    bottom: 40px;
+    width: 170px;
+    height: 200px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.home-sci a{
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid var(--orange-color, #e28743);
+    border-radius: 50%;
+    font-size: 20px;
+    color: var(--orange-color, #e28743);
+    text-decoration: none;
+    z-index: 1;
+    overflow: hidden;
+    transition: transform 0.5s;
+}
+
+.home-sci a:hover{
+    color: #081b29;
+    transform: translateY(-5px);
+}
+
+.home-sci a::before{
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: var(--orange-color, #e28743);
+    z-index: -1;
+    transition: .3s;
+}
+
+.home-sci a:hover::before{
+    width: 100%;
+}
+
+.home-sci::before{    
+    position: absolute;
+    content: '';
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-color, #e0dede);
+    transition: .3s;
+    animation: showRight 1s ease forwards;
+    animation-delay: 1.9s;
+    z-index: 2;
+}
+
+/* Existing CSS for .copyright */
+.copyright {
+    width: 100%;
+    text-align: center;
+    padding: 25px 0;
+    background: var(--bg-color, #e0dede);
+    font-weight: 300;
+    margin-top: auto; /* Align to the bottom */
+}
+
+
+/* Add this CSS to create a flex container */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Add this CSS to push the main content above the footer */
+main {
+    flex-grow: 1;
+}
+
+.copyright::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: var(--orange-color, #e28743); /* Set your desired color */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+
+
+/* ABOUT */
+
+.about-image {
+    display: flex;
+    align-items: center;
+    gap: 5%;
+}
+
+.about-image img {
+    width: 48%;
+    border: 2px solid var(--orange-color, #e28743);
+    border-radius: 0.5rem;
+}
+
+.image-caption {
+    text-align: center;
+    margin-top: 5px;
+    display: block; /* This makes the caption a block-level element */
+    position: relative; /* Relative positioning for proper placement */
+    top: -5px; /* Adjust this value to fine-tune the vertical positioning */
+}
+
+
+/* Additional styles for text on the right */
+.about-text {
+    width: 48%; /* Adjust the width as needed */
+}
+
+/* Optional: Add some margin to the text for spacing */
+.about-text p {
+    margin-top: 10px;
+}
+
+/* WORK */
+
+/* Add this section for connecting dots */
+.job {
+    position: relative;
+}
+
+.dot {
+    position: absolute;
+    top: 50%;
+    left: -10px;
+    transform: translate(-50%, -50%);
+    width: 0.5rem;
+    height: 0.5rem;
+    background-color: var(--orange-color, #e28743); /* Use your preferred color */
+    border-radius: 50%;
+}
+
+/* WORK */
+
+/* Add this CSS to your styles.css file or within a <style> tag in your HTML */
+
+/* Style for the entire job container */
+.job {
+    border: 2px solid var(--orange-color); /* Add border to the job container */
+    padding: 20px; /* Add padding for better spacing */
+    border-radius: 10px; /* Add rounded corners */
+    margin-bottom: 20px; /* Add space between job containers */
+    display: flex; /* Use flexbox to center items */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+}
+
+/* Style for the job images (portrait and mesh) */
+.job img {
+    display: block; /* Make the images block elements */
+    margin: 15px 0; /* Add space between the images */
+    max-width: 100%; /* Set the maximum width of the images to 100% */
+    border-radius: 0.5rem; /* Add rounded corners */
+}
+
+/* Style for the container that holds the images */
+.image-container {
+    display: flex; /* Use flexbox to place images side by side */
+    justify-content: space-around; /* Add space between the images */
+    width: 100%; /* Set the width to 100% to ensure responsiveness */
+}
+
+/* Style for the job company name */
+.job-company-name {
+    color: #e28743; /* Set text color */
+    font-size: 1.5em; /* Set font size */
+    margin-bottom: 10px; /* Add space below the company name */
+}
+
+/* Style for the job description */
+.job p {
+    font-style: italic; /* Italicize the job description */
+    margin-bottom: 10px; /* Add space below each paragraph */
+}
+
+/* Style for the job skills */
+.skills {
+    display: flex; /* Add this line to use flexbox */
+    flex-direction: row; /* Set the flex direction to row */
+    align-items: center; /* Align items in the center vertically */
+    margin-bottom: 15px; /* Add space below the skills section */
+}
+
+/* Style for the job skills images */
+.skills img {
+    margin-right: 10px; /* Add space between skill icons */
+}
+
+/* Style for the job ul (unordered list) */
+.job ul {
+    list-style-type: square; /* Use square bullets for list items */
+    margin-left: 20px; /* Indent the list items */
+    margin-bottom: 15px; /* Add space below the list */
+}
+
+/* Style for the job video container */
+.video-container {
+    position: relative; /* Position relative for absolute positioning inside */
+    margin-top: 15px; /* Add space above the video or image */
+}
+
+/* Style for the job video or image */
+.video-container iframe,
+.video-container img {
+    width: 100%; /* Make the video or image responsive */
+    border-radius: 0.5rem; /* Add rounded corners */
+}
+
+/* Clear the margin on the last image to prevent extra space */
+.job img:last-child {
+    margin-right: 0;
+}
+
+/* KEYFRAMES CSS ANIMATION */
+@keyframes showRight {
+    100%{
+        width: 0;
+    }
+    /* 100%{
+        width: 100%;
+    } */
+}
+
+
+
+/* CONTACT */
+
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 10% 10% 0; /* Adjust the padding as needed */
+}
+
+.contact-heading-left{
+    flex-basis: 45%;
+}
+
+.contact-heading-left h1{
+    position: relative;
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.contact-heading-left p{
+    position: relative;
+    font-size: 20px;
+    margin-top: 30px; 
+    display: flex;
+}
+
+.contact-heading-left p i{
+    color: var(--orange-color, #e28743);
+    margin-right: 10px;
+    font-size: x-large;
+}
+.contact-form-right{
+    flex-basis: 50%;
+    padding: 0 20px; /* Add some padding for spacing */
+}
+.contact-form-right form{
+    width: 100%;
+}
+
+.contact-form-right form button {
+    width: 100%;
+    padding: 15px;
+    background-color: var(--orange-color, #e28743);
+    color: var(--bg-color, #e0dede);
+    font-size: 20px;
+    border: 2px solid var(--orange-color, #e28743);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.contact-form-right form button:hover {
+    background-color: #081b29;
+}
+
+/* Media query for responsiveness */
+@media screen and (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+    }
+
+    .contact-heading-left,
+    .contact-form-right {
+        flex-basis: 100%;
+    }
+}
+
+form input, form textarea{
+    width: 100%;
+    padding: 10px;
+    border: 2px solid var(--orange-color, #e28743);
+    outline: none;
+    background: var(--bg-color, #e0dede);
+    padding: 15px;
+    margin: 15px 0;
+    color: #272525;
+    font-size: 20px;
+    border-radius: 6px;
+}
+
+.social-icons {
+    margin-top: 10px;
+    /* position: absolute; */
+    bottom: 40px;
+    width: 170px;
+    height: 350px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.social-icons a{
+    margin-top: 10px;
+    /* margin-right: 10px; */
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid var(--orange-color, #e28743);
+    border-radius: 50%;
+    font-size: 20px;
+    color: var(--orange-color, #e28743);
+    text-decoration: none;
+    z-index: 1;
+    overflow: hidden;
+    transition: transform 0.5s;
+}
+
+.social-icons a:hover{
+    color: #081b29;
+    transform: translateY(-5px);
+}
+
+.social-icons a::before{
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: var(--orange-color, #e28743);
+    z-index: -1;
+    transition: .3s;
+}
+
+.social-icons a:hover::before{
+    width: 100%;
+}
+
+.social-icons::before{    
+    position: absolute;
+    content: '';
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-color, #e0dede);
+    transition: .3s;
+    animation: showRight 1s ease forwards;
+    animation-delay: 0.7s;
+    z-index: 2;
+}
+
+.btn.btn2 {
+    display: inline-block;
+    padding: 10px 15px; /* Adjust padding */
+    color: var(--orange-color, #e28743); /* Set text color to orange */
+    font-size: 20px; /* Adjust font size to your preference */
+    border: 2px solid var(--orange-color, #e28743); /* Set orange border */
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-decoration: none;
+    display: block; /* Make it a block-level element for centering */
+    margin: 0 auto; /* Center horizontally */
+}
+
+@media (color-gamut: srgb){
+    .btn.btn2 {
+        background: #e0dede;
+    }
+}
+
+.btn.btn2 i {
+    margin-right: 0.5rem;; /* Adjust icon spacing */
+}
+
+.btn.btn2:hover {
+    background-color: #081b29;
+    color: #ffffff;
+}
+
+
+/* Add a media query for smaller screens */
+@media screen and (max-width: 768px) {
+    body {
+        margin: 2% 5%; /* Fallback margin for smaller screens */
+    }
+
+    .header {
+        padding: 3dvh 5%;
+    }
+        /* 20px */
+
+}
+
+/*hamburger menu styling */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    height: 3px;
+    width: 25px;
+    background: #272523;
+    margin: 5px 0;
+    display: block;
+    transition: 0.4s;
+}
+
+@media screen and (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+    .navbar a:hover,
+    .navbar a.active{
+    color: var(--bg-color, #e0dede);;
+}
+
+    .header i{
+        display: block;
+        font-size: 25px;
+    } 
+
+    .side-menu:checked ~ nav {
+        display: block; /* Show navigation when checkbox is checked */
+    }
+
+    .hamb-line {
+        background-color: var(--bg-color, #e0dede); /* Change color for better visibility */
+    }
+    .navbar {
+        display: none;
+        flex-direction: column;
+        width: 200px;
+        height: 100vh;
+        position: fixed;
+        top: 0; /* Adjust this value based on your header height */
+        right: 0;
+        left: 0;
+        background: var(--orange-color, #e28743);
+        z-index: 1;
+        padding-top: 50px;
+        left: 5px;
+    }
+
+    .navbar a {
+        padding: 15px;
+        text-align: center;
+    }
+
+    .navbar a:hover {
+        background-color: var(--orange-color, #e28743);
+        color: var(--bg-color, #e0dede);
+    }
+
+    .navbar.show {
+        display: flex;
+    }
+}
+
+/* Add this to your styles.css file or within a <style> tag in your HTML */
+
+/* Add this to your styles.css file or within a <style> tag in your HTML */
+
+/* Style for the organizations section */
+main section {
+    max-width: 50rem;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Style for the table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+th {
+    background-color: #007bff;
+    color: white;
+}
+
+/* Style for the organization details */
+div.sums {
+    margin-top: 40px;
+    text-align: left;
+}
+
+.sums h3 {
+    color: #007bff;
+}
+
+.sums h4 {
+    margin-top: 10px;
+    font-style: italic;
+    color: #e28743; /* Orange color */
+}
+
+.sums p {
+    margin-top: 10px;
+}
+
+/* Style for images within the organization details */
+.sums figure {
+    margin-top: 20px;
+}
+
+/* Style for the video */
+main section video {
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* Optional: Add some margin to the footer for spacing */
+footer {
+    margin-top: 20px;
+}
+
+/* CSS for small phone screens */
+@media only screen and (max-width: 767px) {
+    .home-content h1 {
+        font-size: 30px;
+
+    }
+
+    main section {
+        padding: 10px;
+    }
+
+    .sums {
+        text-align: center;
+    }
+
+    .sums figure {
+        margin: auto;
+    }
+}
+
+/* CSS for ipad/tablet screens */

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="This is the portfolio website of Devanshi Jain, a mathematics and computer science undergraduate student at UC San Diego.">
+    <meta name="email" content="djain@ucsd.edu">
+    <meta name="linkedin" content="https://www.linkedin.com/in/djain18/">
+    <meta name="github" content="https://github.com/devanshi-jain">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel="stylesheet">
+    <title>Lab Experiments | Devanshi Jain</title>
+</head>
+<body>
+    <header class = "header">
+        <a href="#" class="logo">Devanshi Jain</a>
+        
+        <input type="checkbox" id="toggle-menu" class="side-menu">
+        <label for="toggle-menu" class="hamb">
+            <i class="bx bx-menu"></i>
+        </label>
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="work.html">Work</a>
+            <a href="organizations.html">Organizations</a>
+            <a href="resume.html">Resume</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Lab & Experiments for CSE 134B</h2>
+            <h3>MathML Experiment</h3>
+            Here is Einstein's famous equation in MathML:
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+                <mstyle displaystyle="true">
+                    <msup>
+                        <mi>E</mi> <!-- Base: E -->
+                        <mn>2</mn> <!-- Superscript: 2 -->
+                    </msup>
+                    <mo>=</mo>
+                    <mi>m</mi> <!-- Base: m -->
+                    <mo>&#8290;</mo> <!-- Multiplication symbol (optional) -->
+                    <msup>
+                        <mi>c</mi> <!-- Base: c -->
+                        <mn>2</mn> <!-- Superscript: 2 -->
+                    </msup>
+                </mstyle>
+            </math>        
+        </section>
+        
+
+        <div>
+            <p>HTML elements and their counts:</p>
+            <ul>
+                <li>html, head, title, meta, body, main, summary, br, picture - All in index.html (i.e., home page and others)</li>
+                <li>section, header, footer, aside, nav - can be seen on almost all pages</li>
+                <li>link - Used to link to styles.css - Used only twice in about page</li>
+                <li>script - 7 lines of JS for canvas experiment above</li>
+                <li>h1, h2, h3, p - All used sequentially in the work page</li>
+                <li> canvas, b, i, strong, code, pre, hr, iframe, audio, ol, template - Can all be seen on the lab page</li>
+                <li>div, svg, ul, li, img, em, a, col, colgroup- Used in the work page</li>
+                <li>a - used for Resume</li>
+                <li>form, label, input, text area, select, option, legend, button, optgroup, fieldset, datalist, details - contact page</li>
+                <li>audio, source, span, figure, figcaption, table, tr, td, th, caption - Organizations page</li>
+
+            </ul>
+        </div>
+        
+        
+        <template id="hiddenContent">
+            <h3>This content is hidden</h3>
+            <p>This content is inside a template element and is initially hidden until activated by JavaScript.</p>
+        </template>
+
+        <hr>
+        <section>
+            This section is primarily dedicated to all the tags that I didn't see a use of in my normal portfolio's pages:
+<ol>
+            <li>Here's some code from my class on numerical analysis utilizing both cod and pre tags:
+                 <pre><code>&lt;
+                    q = zeros(50, 1);
+                    for i = 1:num_trials
+                        A = randn(500);
+                        b = randn(500, 1);
+                        x = A\b;
+                        delta_b = 10^(-3) * randn(500, 1);
+                        x_tilde = A\(b + delta_b);
+                        rel_error_sol = norm(x_tilde - x, 1) / norm(x, 1);
+                        rel_error_b = norm(delta_b, 1) / norm(b, 1);
+                        q(i) = rel_error_sol / (cond(A, 1) * rel_error_b);
+                    end
+                    
+                    y = log10(q);
+                    plot(y);
+                    
+                    xlabel('Trial Number');
+                    ylabel('log_{10}(q)');
+                    title('Plot of log_{10}(q) for 50 Trials');
+                    
+                    grid on;
+                &gt;</code>
+                    </pre>
+                </li>
+                <li><iframe src="https://www.example.com"></iframe></li>
+                <li><audio controls>
+                    <source src="media/aud.ogg" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                  </audio></li>
+
+                  <li>
+                    <!-- <section> -->
+                        <h3>Canvas Experiment</h3>
+                        <p>Here's a simple canvas experiment with text.</p>
+                        <canvas id="myCanvas" width="400" height="100"></canvas>
+                        <script>
+                            const canvas = document.getElementById('myCanvas');
+                            const ctx = canvas.getContext('2d');
+                            ctx.fillStyle = 'lightblue';
+                            ctx.fillRect(0, 0, 400, 100);
+                            ctx.font = '20px Arial';
+                            ctx.fillStyle = 'black';
+                            ctx.fillText('Light Blue is my favorite color', 50, 60);
+                        </script>
+                    <!-- </section> -->
+                  </li>
+
+                  <li>
+                            
+        <!-- <section> -->
+            <b><i>Using CSS for styling instead of  &lt;b&gt; and &lt;i&gt; tags improves accessibility by separating visual presentation from content structure, ensuring semantic meaning is retained. This benefits users with disabilities and allows for more precise styling control.</i></b></li>
+            
+            <li><br><strong>The &lt;strong&gt; tag, when used thoughtfully, helps emphasize content without changing its structure. This promotes accessibility, ensuring important information is effectively conveyed to all users and assistive technologies.</strong></li>
+                  
+</ol>
+        </section>
+        <hr>
+    
+
+    </main>
+    <aside>
+        <h4>Connect with Me</h4>
+        <a href="mailto:djain@ucsd.edu">
+            <img src="icons/gmail.svg" alt="C Programming" width="30" height="40">
+        </a><a href="https://www.linkedin.com/in/djain18/">
+            <img src="icons/LinkedIn.svg" alt="C Programming" width="30" height="40">
+        </a><a href="https://github.com/devanshi-jain">
+            <img src="icons/Github-Light.svg" alt="C Programming" width="30" height="40">
+        </a>
+    </aside>
+    <footer>
+        <p>&copy; 2023 Devanshi Jain</p>
+    </footer>
+</body>
+</html>
